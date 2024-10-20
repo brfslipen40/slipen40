@@ -8,6 +8,11 @@
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   }
 
+  body {
+    background-color: #fbfaf2;
+    color: #212427;
+  }
+
   a {
     @apply text-sky-600 underline;
   }

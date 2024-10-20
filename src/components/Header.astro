@@ -18,6 +18,8 @@ const routeDefinitions: {
 ];
 ---
 
-<header class="flex gap-2 bg-teal-300 p-4">
-  {routeDefinitions.map((route) => <a href={route.link}>{route.name}</a>)}
+<header class="bg-teal-300">
+  <div class="mx-auto flex w-2/3 gap-2 py-4">
+    {routeDefinitions.map((route) => <a href={route.link}>{route.name}</a>)}
+  </div>
 </header>
