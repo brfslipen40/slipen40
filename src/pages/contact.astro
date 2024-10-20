@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 
 const contacts = {
   board: {
@@ -31,43 +31,41 @@ const contacts = {
 };
 ---
 
-<Layout title="BRF Slipen 40 | Kontakt">
-  <main>
-    <h1>Kontaktinformation</h1>
+<MainLayout title="Slipen 40 | Kontakt">
+  <h1>Kontaktinformation</h1>
 
-    <div>
-      <p>
-        <b>Kontakta oss:</b>
-        <a href={`mailto:${contacts.board.mail}`}>{contacts.board.mail}</a>
-      </p>
+  <div>
+    <p>
+      <b>Kontakta oss:</b>
+      <a href={`mailto:${contacts.board.mail}`}>{contacts.board.mail}</a>
+    </p>
 
-      <p>
-        <b>Fastighetsskötare:</b>
-        <a href={`mailto:${contacts.propertyManager.mail}`}
-          >{contacts.propertyManager.mail}</a
-        >
-        <a href={`tel:${contacts.propertyManager.phone}`}
-          >({contacts.propertyManager.phone})</a
-        >
-      </p>
-    </div>
+    <p>
+      <b>Fastighetsskötare:</b>
+      <a href={`mailto:${contacts.propertyManager.mail}`}
+        >{contacts.propertyManager.mail}</a
+      >
+      <a href={`tel:${contacts.propertyManager.phone}`}
+        >({contacts.propertyManager.phone})</a
+      >
+    </p>
+  </div>
 
-    <div>
-      <table class="w-full">
-        <thead>
-          <b>{contacts.board.name}</b>
-        </thead>
-        <tbody>
-          {
-            contacts.board.memeber.map((member) => (
-              <tr>
-                <td>{member.role}</td>
-                <td>{member.name}</td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
-    </div>
-  </main>
-</Layout>
+  <div>
+    <table class="w-full">
+      <thead>
+        <b>{contacts.board.name}</b>
+      </thead>
+      <tbody>
+        {
+          contacts.board.memeber.map((member) => (
+            <tr>
+              <td>{member.role}</td>
+              <td>{member.name}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</MainLayout>
