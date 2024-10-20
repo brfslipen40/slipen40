@@ -8,7 +8,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "bun run prettier ./ -w"
+    "format": "bun run prettier -w ./",
+    "lint": "bun run eslint ./"
   },
   "dependencies": {
     "astro": "^4.15.10",
@@ -16,7 +17,13 @@
     "typescript": "^5.6.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@typescript-eslint/parser": "^8.10.0",
+    "eslint": "^9.13.0",
+    "eslint-plugin-astro": "^1.3.0",
+    "globals": "^15.11.0",
     "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript-eslint": "^8.10.0"
   }
 }
