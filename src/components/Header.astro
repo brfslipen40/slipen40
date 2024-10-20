@@ -1,0 +1,23 @@
+---
+const routeDefinitions: {
+  link: string;
+  name: string;
+}[] = [
+  {
+    link: "/",
+    name: "BRF Slipen 40",
+  },
+  {
+    link: "/info",
+    name: "Information",
+  },
+  {
+    link: "/contact",
+    name: "Kontakt",
+  },
+];
+---
+
+<header class="p-4 bg-teal-300 flex gap-2">
+  {routeDefinitions.map((route) => <a href={route.link}>{route.name}</a>)}
+</header>
