@@ -1,8 +1,10 @@
 ---
-const routeDefinitions: {
+type RouteDefinition = {
   link: string;
   name: string;
-}[] = [
+};
+
+const routeDefinitions: RouteDefinition[] = [
   {
     link: "/",
     name: "BRF Slipen 40",
@@ -19,7 +21,20 @@ const routeDefinitions: {
 ---
 
 <header class="bg-teal-300">
-  <div class="mx-auto flex w-2/3 gap-2 py-4">
-    {routeDefinitions.map((route) => <a href={route.link}>{route.name}</a>)}
-  </div>
+  <nav class="mx-auto flex w-2/3 max-w-screen-2xl gap-2 py-2">
+    {
+      routeDefinitions.map((route) => (
+        <a
+          href={route.link}
+          class={
+            Astro.url.pathname === route.link
+              ? "ring rounded-sm text-gray-800"
+              : ""
+          }
+        >
+          {route.name}
+        </a>
+      ))
+    }
+  </nav>
 </header>
