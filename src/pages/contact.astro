@@ -1,7 +1,73 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const contacts = {
+  board: {
+    name: "Styrelsen 2023/24",
+    mail: "styrelsen@brfslipen40.se",
+    memeber: [
+      {
+        role: "Ordförande",
+        name: "Johan Eng Larsson",
+      },
+      {
+        role: "Kassör",
+        name: "Tobias Nilsson",
+      },
+      {
+        role: "Sekreterare",
+        name: "Mira Rosengren Keijser",
+      },
+      {
+        role: "Ledamot",
+        name: "Anna Andersson",
+      },
+    ],
+  },
+  propertyManager: {
+    mail: "adfingo@telia.com",
+    phone: "08-556 304 00",
+  },
+};
 ---
 
 <Layout title="BRF Slipen 40 | Kontakt">
-  <main>Kontakt</main>
+  <main>
+    <h1>Kontaktinformation</h1>
+
+    <div>
+      <p>
+        <b>Kontakta oss:</b>
+        <a href={`mailto:${contacts.board.mail}`}>{contacts.board.mail}</a>
+      </p>
+
+      <p>
+        <b>Fastighetsskötare:</b>
+        <a href={`mailto:${contacts.propertyManager.mail}`}
+          >{contacts.propertyManager.mail}</a
+        >
+        <a href={`tel:${contacts.propertyManager.phone}`}
+          >({contacts.propertyManager.phone})</a
+        >
+      </p>
+    </div>
+
+    <div>
+      <table class="w-full">
+        <thead>
+          <b>{contacts.board.name}</b>
+        </thead>
+        <tbody>
+          {
+            contacts.board.memeber.map((member) => (
+              <tr>
+                <td>{member.role}</td>
+                <td>{member.name}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </main>
 </Layout>
