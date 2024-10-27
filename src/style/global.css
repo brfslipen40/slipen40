@@ -16,6 +16,14 @@
   a {
     @apply text-sky-600 underline;
   }
+
+  h1 {
+    @apply mb-2 text-3xl;
+  }
+
+  h2 {
+    @apply mb-2 text-2xl;
+  }
 }
 
 @layer components {

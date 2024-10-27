@@ -34,38 +34,53 @@ const contacts = {
 <MainLayout title="Slipen 40 | Kontakt">
   <h1>Kontaktinformation</h1>
 
-  <div>
-    <p>
-      <b>Kontakta oss:</b>
-      <a href={`mailto:${contacts.board.mail}`}>{contacts.board.mail}</a>
-    </p>
+  <div class="stack gap-4">
+    <div>
+      <h2>Styrelsen</h2>
 
-    <p>
-      <b>Fastighetsskötare:</b>
-      <a href={`mailto:${contacts.propertyManager.mail}`}
-        >{contacts.propertyManager.mail}</a
-      >
-      <a href={`tel:${contacts.propertyManager.phone}`}
-        >({contacts.propertyManager.phone})</a
-      >
-    </p>
-  </div>
+      <p class="mb-2">
+        Mejl: <a href={`mailto:${contacts.board.mail}`}>{contacts.board.mail}</a
+        >
+      </p>
 
-  <div>
-    <table class="w-full">
-      <thead>
-        <b>{contacts.board.name}</b>
-      </thead>
-      <tbody>
-        {
-          contacts.board.memeber.map((member) => (
-            <tr>
-              <td>{member.role}</td>
-              <td>{member.name}</td>
-            </tr>
-          ))
-        }
-      </tbody>
-    </table>
+      <table
+        class="table-auto border-separate border-spacing-1 border-slate-500"
+      >
+        <thead>
+          <tr>
+            <th>
+              {contacts.board.name}
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {
+            contacts.board.memeber.map((member) => (
+              <tr>
+                <td>{member.role}</td>
+                <td>{member.name}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <h2>Fastighetsskötare/Jour</h2>
+
+      <p>
+        Mejl: <a href={`mailto:${contacts.propertyManager.mail}`}
+          >{contacts.propertyManager.mail}</a
+        >
+
+        <br />
+
+        Telefon: <a href={`tel:${contacts.propertyManager.phone}`}
+          >({contacts.propertyManager.phone})</a
+        >
+      </p>
+    </div>
   </div>
 </MainLayout>
