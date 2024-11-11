@@ -15,7 +15,7 @@ const routeDefinitions: RouteDefinition[] = [
   },
   {
     link: "/info",
-    name: "Information",
+    name: "Om föreningen",
   },
   {
     link: "/contact",
@@ -23,16 +23,16 @@ const routeDefinitions: RouteDefinition[] = [
   },
 ];
 
-const selectedPageClass = "rounded-sm text-gray-800  bg-teal-800 text-white";
+const selectedPageClass = "rounded-sm text-gray-800  bg-neutral-800 text-white";
 ---
 
-<header class={`bg-teal-300 ${Astro.props.class}`}>
+<header class={`bg-neutral-700 ${Astro.props.class}`}>
   <nav class="mx-auto flex w-2/3 max-w-screen-2xl">
     {
       routeDefinitions.map((route) => (
         <a
           href={route.link}
-          class={`p-2 hover:bg-teal-800 hover:text-white ${Astro.url.pathname === route.link ? selectedPageClass : ""}`}
+          class={`p-2 text-neutral-300 hover:bg-neutral-500 hover:text-white ${Astro.url.pathname === route.link ? selectedPageClass : ""}`}
         >
           {route.name}
         </a>
