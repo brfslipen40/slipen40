@@ -1,20 +1,27 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 
-const about = [
+const associationFields: { title: string; content: any }[] = [
+  { title: "Namn", content: "BRF Slipen 40" },
   {
-    name: "Slipen 40",
+    title: "Address",
+    content: "<div>Slipgatan 2 <br /> 117 39, Stockholm</div>",
   },
 ];
+
+const aboutAssociation = {
+  name: "Slipen 40",
+  description:
+    "Slipen 40 är en äkta förening med engagerade medlemmar sen många år tillbaka. Föreningen förvärade av Stockholmshem och äger fastigheten sedan år 2000",
+  fields: associationFields,
+};
 ---
 
 <MainLayout title="Slipen 40 | Om föreningen">
   <h1>Om föreningen</h1>
   <hr />
   <p class="max-w-prose">
-    Slipen 40 är en äkta förening med engagerade medlemmar sen många år
-    tillbaka. Föreningen förvärade av Stockholmshem och äger fastigheten sedan
-    år 2000.
+    {aboutAssociation.description}
   </p>
 
   <table class="table-auto border-separate border-spacing-1 border-slate-500">
@@ -25,7 +32,14 @@ const about = [
     </thead>
 
     <tbody>
-      <tr></tr>
+      {
+        aboutAssociation.fields.map(({ title, content }) => (
+          <tr>
+            <td>{title}</td>
+            <td>{content}</td>
+          </tr>
+        ))
+      }
     </tbody>
   </table>
 </MainLayout>
